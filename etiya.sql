@@ -50,12 +50,12 @@ JOIN Products ON 'Order Details'.ProductID = Products.ProductID
 GROUP BY Products.ProductName
 
 SELECT 
-    Customers.CustomerName, 
+    Customers.CompanyName, 
     Orders.OrderID, 
     Orders.OrderDate
 FROM Customers
 JOIN Orders ON Customers.CustomerID = Orders.CustomerID
-WHERE Customers.CustomerName LIKE 'B%'
+WHERE Customers.CompanyName LIKE 'B%'
 
 SELECT 
     Categories.CategoryName,

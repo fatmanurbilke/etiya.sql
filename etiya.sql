@@ -43,10 +43,10 @@ HAVING COUNT(Orders.OrderID) > 5
 
 SELECT 
     Products.ProductName, 
-    SUM(OrderDetails.Quantity) AS TotalQuantitySold, 
-    SUM(OrderDetails.Quantity * OrderDetails.UnitPrice) AS TotalSalesAmount
-FROM OrderDetails
-JOIN Products ON OrderDetails.ProductID = Products.ProductID
+    SUM('Order Details'.Quantity) AS 'Total Quantity Sold', 
+    SUM('Order Details'.Quantity * 'Order Details'.UnitPrice) AS 'Total Sales Amount'
+FROM 'Order Details'
+JOIN Products ON 'Order Details'.ProductID = Products.ProductID
 GROUP BY Products.ProductName
 
 SELECT 

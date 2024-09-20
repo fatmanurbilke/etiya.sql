@@ -186,7 +186,7 @@ WHERE o.OrderDate BETWEEN '1997-01-01' AND '1998-12-31'
 
 SELECT 
     c.CustomerID,
-    c.CustomerName
+    c.CompanyName
 FROM Customers c
 LEFT JOIN Orders o ON c.CustomerID = o.CustomerID
 WHERE o.OrderID IS NULL

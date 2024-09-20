@@ -64,15 +64,9 @@ FROM Categories
 LEFT JOIN Products ON Categories.CategoryID = Products.CategoryID
 WHERE Products.ProductName IS NULL
 
-SELECT 
-    e1.EmployeeID AS EmployeeID,
-    e1.FirstName AS EmployeeFirstName,
-    e1.LastName AS EmployeeLastName,
-    e2.EmployeeID AS ManagerID,
-    e2.FirstName AS ManagerFirstName,
-    e2.LastName AS ManagerLastName
+SELECT concat(e1.FirstName,' ', e1.LastName) as 'Çalışan', concat(e2.FirstName,' ', e2.LastName) AS 'Yönetici' 
 FROM Employees e1
-LEFT JOIN Employees e2 ON e1.ManagerID = e2.EmployeeID
+LEFT JOIN  Employees e2 on e1.ReportsTo = e2.EmployeeID
 
 WITH MaxPricePerCategory AS (
     SELECT 

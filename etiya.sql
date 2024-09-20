@@ -111,11 +111,11 @@ HAVING COUNT(DISTINCT UnitPrice) > 1
 SELECT 
     Orders.OrderID,
     Orders.OrderDate,
-    OrderDetails.ProductID,
-    OrderDetails.Quantity,
-    OrderDetails.UnitPrice
+    'Order Details'.ProductID,
+    'Order Details'.Quantity,
+    'Order Details'.UnitPrice
 FROM Orders
-JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
+JOIN 'Order Details' ON Orders.OrderID = 'Order Details'.OrderID
 ORDER BY Orders.OrderID ASC
 
 SELECT 
